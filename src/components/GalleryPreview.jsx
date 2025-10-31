@@ -1,32 +1,30 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-
+import img1 from "../../public/images/gallery/img1.jpg";
+import img5 from "../../public/images/gallery/img5.jpg";
+import img9 from "../../public/images/gallery/img9.jpg";
+import img13 from "../../public/images/gallery/img13.jpg";
 // Define the sample data for your gallery preview
 const GalleryItems = [
   {
     id: 1,
-    // Replace with actual image URLs of your best work (banners, arch boards, signs)
-    imageUrl:
-      "https://images.unsplash.com/photo-1517457210352-736998d41269?fit=crop&w=400&h=300&q=80",
-    altText: "Custom designed outdoor arch board installation",
+    imageUrl: img1,
+    altText: "Image 1",
   },
   {
     id: 2,
-    imageUrl:
-      "https://images.unsplash.com/photo-1549487779-c5c8a49c4f1c?fit=crop&w=400&h=300&q=80",
-    altText: "Vibrant printed banner for an event promotion",
+    imageUrl: img5,
+    altText: "Image 2",
   },
   {
     id: 3,
-    imageUrl:
-      "https://images.unsplash.com/photo-1522869273523-a55d4c845b46?fit=crop&w=400&h=300&q=80",
-    altText: "Interior illuminated 3D signage display",
+    imageUrl: img9,
+    altText: "Image 3",
   },
   {
     id: 4,
-    imageUrl:
-      "https://images.unsplash.com/photo-1528691516428-c5088ce8d86b?fit=crop&w=400&h=300&q=80",
-    altText: "Large format vinyl banner covering a building facade",
+    imageUrl: img13,
+    altText: "Image 4",
   },
 ];
 
@@ -37,7 +35,7 @@ const GalleryPreview = () => {
         {/* Section Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            Our <span className="text-indigo-600">Recent Work</span>
+            Our <span className="text-red-600">Recent Work</span>
           </h2>
           <p className="mt-4 text-xl text-gray-600">
             See the quality and creativity behind our banners, arch boards, and
@@ -58,7 +56,7 @@ const GalleryPreview = () => {
                 className="w-full h-full object-cover transform transition duration-500 group-hover:scale-105"
               />
               {/* Optional: Hover Overlay for Polish */}
-              <div className="absolute inset-0 bg-indigo-600 opacity-0 group-hover:opacity-20 transition duration-300"></div>
+              <div className="absolute inset-0 bg-red-600 opacity-0 group-hover:opacity-20 transition duration-300"></div>
             </div>
           ))}
         </div>
@@ -67,7 +65,7 @@ const GalleryPreview = () => {
         <div className="text-center mt-12 md:mt-16">
           <a
             href="/gallery" // This redirects to your full gallery page
-            className="inline-flex items-center bg-indigo-600 text-white font-extrabold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-indigo-700 transition duration-300 transform hover:scale-105"
+            className="inline-flex items-center bg-red-600 text-white font-extrabold py-3 px-8 rounded-full text-lg shadow-xl hover:bg-red-700 transition duration-300 transform hover:scale-105"
           >
             View More Projects
             <FaArrowRight className="ml-3 w-4 h-4" />

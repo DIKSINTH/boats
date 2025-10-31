@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import AboutUs from "../components/AboutUs";
 import GalleryPreview from "../components/GalleryPreview";
 import Services from "../components/Services.jsx";
+import Clients from "../components/Clients.jsx";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <Landing />
       <AboutUs />
+      <Clients />
       <Services />
       <GalleryPreview />
       <Footer />

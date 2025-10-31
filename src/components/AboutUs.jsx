@@ -13,7 +13,7 @@ const AboutUs = () => {
         {/* Section Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            Who We Are: The <span className="text-indigo-600">Reach Brand</span>{" "}
+            Who We Are: The <span className="text-red-600">Reach Brand</span>{" "}
             Story
           </h2>
           <p className="mt-4 text-xl text-gray-600">
@@ -43,12 +43,12 @@ const AboutUs = () => {
               are driven by a passion for helping local and national businesses
               achieve their full brand potential.
             </p>
-            <a
+            {/* <a
               href="/services"
-              className="mt-8 inline-block bg-indigo-600 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300"
+              className="mt-8 inline-block bg-red-600 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300"
             >
               See Our Full Capabilities
-            </a>
+            </a> */}
           </div>
 
           {/* Image Placeholder */}
@@ -65,7 +65,7 @@ const AboutUs = () => {
         <div className="mt-16 pt-12 border-t border-gray-200">
           <dl className="grid grid-cols-1 gap-10 sm:grid-cols-3 text-center">
             <div className="flex flex-col items-center">
-              <FaTrophy className="w-10 h-10 text-indigo-500 mb-3" />
+              <FaTrophy className="w-10 h-10 text-red-500 mb-3" />
               <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
                 Years of Expertise
               </dt>
@@ -75,7 +75,7 @@ const AboutUs = () => {
             </div>
 
             <div className="flex flex-col items-center">
-              <FaUsers className="w-10 h-10 text-indigo-500 mb-3" />
+              <FaUsers className="w-10 h-10 text-red-500 mb-3" />
               <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
                 Happy Clients Served
               </dt>
@@ -85,7 +85,7 @@ const AboutUs = () => {
             </div>
 
             <div className="flex flex-col items-center">
-              <FaLightbulb className="w-10 h-10 text-indigo-500 mb-3" />
+              <FaLightbulb className="w-10 h-10 text-red-500 mb-3" />
               <dt className="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
                 Projects Completed
               </dt>

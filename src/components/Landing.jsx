@@ -22,7 +22,7 @@ const Landing = () => {
         <div className="max-w-5xl text-center mb-12 sm:mb-16">
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
             Design, Build, & Install Your{" "}
-            <span className="text-indigo-400">Perfect Brand Identity</span>
+            <span className="text-red-400">Perfect Brand Identity</span>
           </h1>
           <p className="mt-4 text-lg sm:text-xl font-medium text-gray-300">
             Specializing in high-impact Banners, Arch Boards, and bespoke
@@ -34,9 +34,9 @@ const Landing = () => {
         <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-2 pb-16">
           {/* Mission Card: Solid Contrast for Readability */}
           <section className="p-8 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-indigo-500 transform hover:scale-[1.02] transition duration-300 ease-in-out">
-            <h2 className="text-3xl font-bold mb-4 text-indigo-400 flex items-center justify-center lg:justify-start">
+            <h2 className="text-3xl font-bold mb-4 text-red-400 flex items-center justify-center lg:justify-start">
               <svg
-                className="w-8 h-8 mr-3 text-indigo-500"
+                className="w-8 h-8 mr-3 text-red-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -65,9 +65,9 @@ const Landing = () => {
 
           {/* Vision Card: Solid Contrast for Readability */}
           <section className="p-8 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-emerald-500 transform hover:scale-[1.02] transition duration-300 ease-in-out">
-            <h2 className="text-3xl font-bold mb-4 text-emerald-400 flex items-center justify-center lg:justify-start">
+            <h2 className="text-3xl font-bold mb-4 text-red-400 flex items-center justify-center lg:justify-start">
               <svg
-                className="w-8 h-8 mr-3 text-emerald-500"
+                className="w-8 h-8 mr-3 text-red-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -95,7 +95,7 @@ const Landing = () => {
         <div className="mt-8 mb-16">
           <a
             href="/contact" // Link to your contact page
-            className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold py-4 px-10 rounded-full text-xl shadow-2xl transform hover:scale-110 transition duration-300 ease-in-out"
+            className="inline-block bg-red-600 hover:bg-red-700 text-white font-extrabold py-4 px-10 rounded-full text-xl shadow-2xl transform hover:scale-110 transition duration-300 ease-in-out"
           >
             Get a Free Design Consultation
           </a>

@@ -5,6 +5,7 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
 } from "react-icons/fa";
+import logo from "../../public/images/gallery/logo.jpg";
 
 // Define the navigation links (same as used in the Header)
 const NavLinks = [
@@ -35,13 +36,15 @@ const Footer = () => {
   const websiteName = "Reach Brand"; // Use your actual website name
 
   return (
-    <footer className="bg-gray-900 text-white border-t border-indigo-500 mt-12">
+    <footer className="bg-gray-900 text-white border-t border-red-500 mt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
           {/* 1. Logo & Website Name */}
           <div className="md:col-span-1 space-y-4">
-            <h3 className="text-3xl font-extrabold text-indigo-400">
-              {websiteName}
+            <h3 className="text-3xl font-extrabold text-red-400 flex justify-center">
+              <a href="/" className="flex-shrink-0">
+                <img src={logo} alt="Your Logo" className="h-18 w-auto" />
+              </a>
             </h3>
             <p className="text-sm text-gray-400">
               Transforming communication through high-quality, custom signage
@@ -65,7 +68,7 @@ const Footer = () => {
 
           {/* 2. Quick Navigation Links */}
           <div className="md:col-span-1">
-            <h4 className="text-lg font-semibold mb-4 text-indigo-300 border-b border-gray-700 pb-2">
+            <h4 className="text-lg font-semibold mb-4 text-red-300 border-b border-gray-700 pb-2">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -73,7 +76,7 @@ const Footer = () => {
                 <li key={link.title}>
                   <a
                     href={link.url}
-                    className="text-gray-300 hover:text-indigo-400 transition duration-150 text-base"
+                    className="text-gray-300 hover:text-red-400 transition duration-150 text-base"
                   >
                     {link.title}
                   </a>
@@ -84,13 +87,13 @@ const Footer = () => {
 
           {/* 3. Contact Information */}
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-lg font-semibold mb-4 text-indigo-300 border-b border-gray-700 pb-2">
+            <h4 className="text-lg font-semibold mb-4 text-red-300 border-b border-gray-700 pb-2">
               Get in Touch
             </h4>
 
             {/* Address */}
             <div className="flex items-start space-x-3">
-              <FaMapMarkerAlt className="w-5 h-5 mt-1 text-emerald-400 flex-shrink-0" />
+              <FaMapMarkerAlt className="w-5 h-5 mt-1 text-red-400 flex-shrink-0" />
               <p className="text-gray-300">
                 <span className="font-medium">Address:</span>{" "}
                 {CONTACT_INFO.address}
@@ -99,10 +102,10 @@ const Footer = () => {
 
             {/* Email */}
             <div className="flex items-center space-x-3">
-              <FaEnvelope className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+              <FaEnvelope className="w-5 h-5 text-red-400 flex-shrink-0" />
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
-                className="text-gray-300 hover:text-indigo-400 transition"
+                className="text-gray-300 hover:text-red-400 transition"
               >
                 <span className="font-medium">Mail:</span> {CONTACT_INFO.email}
               </a>
@@ -111,10 +114,10 @@ const Footer = () => {
             {/* Phone Numbers */}
             <div className="flex flex-col space-y-2 pt-1">
               <div className="flex items-center space-x-3">
-                <FaPhoneAlt className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                <FaPhoneAlt className="w-5 h-5 text-red-400 flex-shrink-0" />
                 <a
                   href={`tel:${CONTACT_INFO.phone1}`}
-                  className="text-gray-300 hover:text-indigo-400 transition"
+                  className="text-gray-300 hover:text-red-400 transition"
                 >
                   {CONTACT_INFO.phone1}
                 </a>
@@ -124,7 +127,7 @@ const Footer = () => {
                 {/* Align second number */}
                 <a
                   href={`tel:${CONTACT_INFO.phone2}`}
-                  className="text-gray-300 hover:text-indigo-400 transition md:ml-8"
+                  className="text-gray-300 hover:text-red-400 transition md:ml-8"
                 >
                   {CONTACT_INFO.phone2}
                 </a>
