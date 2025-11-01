@@ -1,7 +1,7 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa"; // Import FaWhatsapp icon
 // Assuming the path is correct based on your previous component usage
-import teamCollaborationBg from "../../public/images/home-background.png";
+import teamCollaborationBg from "../../public/images/home-background.jpg";
 
 // WhatsApp Configuration (Reused from Header Component)
 const WHATSAPP_NUMBER = "9042594468";
