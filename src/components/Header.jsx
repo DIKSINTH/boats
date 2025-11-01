@@ -40,7 +40,7 @@ const Header = () => {
               </a>
             ))}
 
-            {/* WhatsApp Enquiry Button */}
+            {/* WhatsApp Enquiry Button (Visible on Desktop only) */}
             <a
               href={WHATSAPP_LINK}
               target="_blank"
@@ -52,17 +52,12 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button (ONLY toggle button remains) */}
           <div className="md:hidden flex items-center">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 mr-4 bg-green-500 rounded-full text-white shadow-lg hover:bg-green-600 transition duration-150 ease-in-out"
-              aria-label="WhatsApp Enquiry"
-            >
-              <FaWhatsapp className="w-5 h-5" />
-            </a>
+            {/* *** Removed WhatsApp Button from Mobile View ***
+            The mobile WhatsApp icon has been removed from this section, 
+            leaving only the menu toggle button.
+            */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"

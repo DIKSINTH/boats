@@ -8,6 +8,7 @@ import client6 from "../../public/images/clients/client6.jpg";
 import client7 from "../../public/images/clients/client7.png";
 import client8 from "../../public/images/clients/client8.png";
 import client9 from "../../public/images/clients/client9.jpg";
+
 // Define a list of sample client logos
 const ClientLogos = [
   {
@@ -59,7 +60,6 @@ const ClientLogos = [
 ];
 
 const Clients = () => {
-  // Component name changed to Clients
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -82,13 +82,16 @@ const Clients = () => {
             ) => (
               <div
                 key={logo.id}
+                // Kept the hover shadow and background transition for a clean, interactive container effect
                 className="p-4 bg-gray-50 rounded-lg transition duration-300 hover:shadow-lg hover:bg-gray-100"
               >
                 <img
                   src={logo.url}
                   alt={logo.alt}
                   title={logo.alt}
-                  className="w-full h-16 object-contain mx-auto opacity-70 grayscale transition duration-300 hover:grayscale-0 hover:opacity-100"
+                  // *** IMPORTANT UPDATE: Removed grayscale and opacity classes ***
+                  // The logo now displays at full opacity and in original color.
+                  className="w-full h-16 object-contain mx-auto transition duration-300"
                 />
               </div>
             )

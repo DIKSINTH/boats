@@ -1,12 +1,40 @@
 import React from "react";
+import { FaWhatsapp } from "react-icons/fa"; // Import FaWhatsapp icon
 // Assuming the path is correct based on your previous component usage
 import teamCollaborationBg from "../../public/images/home-background.png";
+
+// WhatsApp Configuration (Reused from Header Component)
+const WHATSAPP_NUMBER = "9042594468";
+const WHATSAPP_MESSAGE = "Hello! I am interested in your services.";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+  WHATSAPP_MESSAGE
+)}`;
+
+// --- NEW FIXED WHATSAPP BUTTON COMPONENT ---
+const FixedWhatsAppButton = () => {
+  return (
+    // Button is FIXED to the bottom right, only visible on MOBILE (md:hidden)
+    <a
+      href={WHATSAPP_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-4 right-4 z-50 md:hidden 
+                       p-4 bg-green-500 rounded-full text-white shadow-xl 
+                       hover:bg-green-600 transition duration-300 ease-in-out 
+                       transform hover:scale-110"
+      aria-label="WhatsApp Chat"
+    >
+      <FaWhatsapp className="w-8 h-8" />
+    </a>
+  );
+};
+// ----------------------------------------------
 
 const Landing = () => {
   return (
     // Outer container: Full viewport height and width
     <div className="relative min-h-screen w-full bg-gray-900 overflow-hidden">
-      {/* Background Image Container (Full Screen) */}
+      {/* 1. Background Image Container (Full Screen) */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${teamCollaborationBg})` }}
@@ -16,9 +44,9 @@ const Landing = () => {
         <div className="absolute inset-0 bg-black opacity-40"></div>
       </div>
 
-      {/* Content Container (Centered and Z-Index) */}
+      {/* 2. Content Container (Centered and Z-Index) */}
       <div className="relative z-10 flex flex-col items-center justify-start pt-16 md:pt-24 min-h-screen text-white px-4">
-        {/* --- 1. Main Headline / Introduction --- */}
+        {/* --- Main Headline / Introduction --- */}
         <div className="max-w-5xl text-center mb-12 sm:mb-16">
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
             Design, Build, & Install Your{" "}
@@ -30,7 +58,7 @@ const Landing = () => {
           </p>
         </div>
 
-        {/* --- 2. Mission & Vision Cards (Side-by-Side on Desktop) --- */}
+        {/* --- Mission & Vision Cards (Side-by-Side on Desktop) --- */}
         <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-2 pb-16">
           {/* Mission Card: Solid Contrast for Readability */}
           <section className="p-8 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-indigo-500 transform hover:scale-[1.02] transition duration-300 ease-in-out">
@@ -91,7 +119,7 @@ const Landing = () => {
           </section>
         </div>
 
-        {/* --- 3. Call to Action (Centered at the bottom) --- */}
+        {/* --- Call to Action (Centered at the bottom) --- */}
         <div className="mt-8 mb-16">
           <a
             href="/contact" // Link to your contact page
@@ -101,6 +129,9 @@ const Landing = () => {
           </a>
         </div>
       </div>
+
+      {/* 3. Fixed Mobile WhatsApp Button - Renders globally within this component's scope */}
+      <FixedWhatsAppButton />
     </div>
   );
 };
