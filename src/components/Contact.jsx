@@ -109,6 +109,22 @@ const ContactInfo = () => {
             </a>
           </div>
         </div>
+
+        {/* Map Section */}
+        <div className="mt-12 bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="h-96 w-full">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.287738779854!2d77.98084709999999!3d9.826183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00d3e83cedcc03%3A0xe59469b5fbcd481c!2sRB%20Designs%20%26%20Fabrications!5e0!3m2!1sen!2sin!4v1762435067618!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="RB Designs & Fabrications Location"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
   );
