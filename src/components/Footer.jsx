@@ -4,8 +4,10 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaPhoneAlt,
+  FaInstagram,
+  FaFacebook,
 } from "react-icons/fa";
-import logo from "../../public/images/gallery/logo.jpg";
+import logo from "../../public/images/gallery/logo.png";
 
 // Define the navigation links (same as used in the Header)
 const NavLinks = [
@@ -19,10 +21,11 @@ const NavLinks = [
 // Contact Details
 const CONTACT_INFO = {
   address:
-    "Sholavandan Road, Opp Karumariyamman kovil, Thirumangalam, Madurai –625 706",
+    "R.R.Complex, 252, Munshif Court Road, Banu Theatre Near, Thirumangalam, Madurai - 625 706",
   email: "reachbrandmdu@gmail.com",
-  phone1: "+91 9791856090",
-  phone2: "+91 9047559590",
+  phone1: "+91 9047559590",
+  phone2: "+91 9791856090",
+  phone3: "+91 6383376718",
   whatsappNumber: "9042594468", // Use one number for WA, if different from phone numbers
   whatsappMessage:
     "Hello, I saw your website footer and would like to inquire about signage solutions.",
@@ -40,30 +43,56 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
           {/* 1. Logo & Website Name */}
-          <div className="md:col-span-1 space-y-4">
-            <h3 className="text-3xl font-extrabold text-red-400 flex justify-center">
-              <a href="/" className="flex-shrink-0">
-                <img src={logo} alt="Your Logo" className="h-18 w-auto" />
+          <div className="md:col-span-1 space-y-4 text-center">
+            {/* Row 1: Logos */}
+            <h3 className="text-3xl font-extrabold text-red-400 flex justify-center gap-6">
+              <a href="/">
+                <img src={logo} alt="Your Logo" className="h-34 w-auto" />
+              </a>
+              <a href="/">
+                <img src={logo} alt="Your Logo" className="h-34 w-auto" />
               </a>
             </h3>
+
+            {/* Row 2: Paragraph */}
             <p className="text-sm text-gray-400">
               Transforming communication through high-quality, custom signage
               design and fabrication.
             </p>
 
-            {/* Attractive WhatsApp Icon */}
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center p-3 bg-green-600 rounded-full text-white shadow-xl hover:bg-green-500 transition duration-300 ease-in-out transform hover:scale-110"
-              aria-label="WhatsApp Enquiry"
-            >
-              <FaWhatsapp className="w-6 h-6" />
-              <span className="ml-3 font-semibold hidden sm:inline">
-                Chat with us!
-              </span>
-            </a>
+            {/* Row 3: WhatsApp + Instagram + Facebook */}
+            <div className="flex justify-center gap-4 pt-4">
+              {/* WhatsApp */}
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-green-600 rounded-full text-white shadow-xl hover:bg-green-500 transition transform hover:scale-110"
+                aria-label="WhatsApp Enquiry"
+              >
+                <FaWhatsapp className="w-6 h-6" />
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-pink-600 rounded-full text-white shadow-xl hover:bg-pink-500 transition transform hover:scale-110"
+              >
+                <FaInstagram className="w-6 h-6" />
+              </a>
+
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/yourprofile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-blue-600 rounded-full text-white shadow-xl hover:bg-blue-500 transition transform hover:scale-110"
+              >
+                <FaFacebook className="w-6 h-6" />
+              </a>
+            </div>
           </div>
 
           {/* 2. Quick Navigation Links */}
@@ -130,6 +159,16 @@ const Footer = () => {
                   className="text-gray-300 hover:text-red-400 transition md:ml-8"
                 >
                   {CONTACT_INFO.phone2}
+                </a>
+              </div>
+              <div className="flex items-center space-x-3 ml-8 sm:ml-0">
+                {" "}
+                {/* Align third number */}
+                <a
+                  href={`tel:${CONTACT_INFO.phone3}`}
+                  className="text-gray-300 hover:text-red-400 transition md:ml-8"
+                >
+                  {CONTACT_INFO.phone3}
                 </a>
               </div>
             </div>

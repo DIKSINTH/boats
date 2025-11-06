@@ -10,10 +10,11 @@ import {
 const CONTACT_INFO = {
   websiteName: "Reach Brand",
   address:
-    "Sholavandan Road, Opp Karumariyamman kovil, Thirumangalam, Madurai –625 706",
+    "R.R.Complex, 252, Munshif Court Road, Banu Theatre Near, Thirumangalam, Madurai - 625 706.",
   email: "reachbrandmdu@gmail.com",
-  phone1: "+91 9791856090",
-  phone2: "+91 9047559590",
+  phone1: "+91 9047559590 ",
+  phone2: "+91 9791856090",
+  phone3: "+91 6383376718",
   whatsappNumber: "9042594468",
 };
 
@@ -83,6 +84,12 @@ const ContactInfo = () => {
                     className="text-lg text-gray-600 hover:text-red-600 transition"
                   >
                     {CONTACT_INFO.phone2}
+                  </a>
+                  <a
+                    href={`tel:${CONTACT_INFO.phone3}`}
+                    className="text-lg text-gray-600 hover:text-red-600 transition"
+                  >
+                    {CONTACT_INFO.phone3}
                   </a>
                 </div>
               </div>

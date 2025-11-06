@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa"; // Import necessary icons
-import logo from "../../public/images/gallery/logo.jpg";
+import logo from "../../public/images/gallery/logo.png";
 const NavLinks = [
   { title: "Home", url: "/" },
   { title: "About Us", url: "/about" },
@@ -25,7 +25,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Website Name */}
           <a href="/" className="flex-shrink-0">
-            <img src={logo} alt="Your Logo" className="h-14" />
+            <img src={logo} alt="Your Logo" className="h-34" />
           </a>
 
           {/* Desktop Navigation & WhatsApp Icon */}

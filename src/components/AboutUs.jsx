@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTrophy, FaUsers, FaLightbulb } from "react-icons/fa";
-import img from "../../public/images/home-background.png";
+import img from "../../public/images/home-background.jpg";
 // Placeholder image (replace with a real image of your team, facility, or best work)
 // For demonstration, we'll assume a generic image is imported or fetched.
 // In a real project, you might import it like:
