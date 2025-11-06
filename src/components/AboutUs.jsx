@@ -70,7 +70,7 @@ const AboutUs = () => {
                 Years of Expertise
               </dt>
               <dd className="order-1 text-5xl font-extrabold text-gray-900">
-                10+
+                3+
               </dd>
             </div>
 
@@ -80,7 +80,7 @@ const AboutUs = () => {
                 Happy Clients Served
               </dt>
               <dd className="order-1 text-5xl font-extrabold text-gray-900">
-                1,500+
+                200+
               </dd>
             </div>
 
@@ -90,7 +90,7 @@ const AboutUs = () => {
                 Projects Completed
               </dt>
               <dd className="order-1 text-5xl font-extrabold text-gray-900">
-                3,000+
+                1,000+
               </dd>
             </div>
           </dl>

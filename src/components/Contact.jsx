@@ -15,7 +15,7 @@ const CONTACT_INFO = {
   phone1: "+91 9047559590 ",
   phone2: "+91 9791856090",
   phone3: "+91 6383376718",
-  whatsappNumber: "9042594468",
+  whatsappNumber: "9047559590",
 };
 
 const WHATSAPP_LINK = `https://wa.me/${

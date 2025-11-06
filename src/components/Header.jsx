@@ -10,7 +10,7 @@ const NavLinks = [
 ];
 
 // Replace 'XXXXXXXXXX' with your full WhatsApp number including country code (no +, no 00).
-const WHATSAPP_NUMBER = "9042594468";
+const WHATSAPP_NUMBER = "9047559590";
 const WHATSAPP_MESSAGE = "Hello! I am interested in your services.";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE

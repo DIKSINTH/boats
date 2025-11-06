@@ -8,6 +8,7 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import logo from "../../public/images/gallery/logo.png";
+import logo2 from "../../public/images/gallery/logo2.png";
 
 // Define the navigation links (same as used in the Header)
 const NavLinks = [
@@ -26,7 +27,7 @@ const CONTACT_INFO = {
   phone1: "+91 9047559590",
   phone2: "+91 9791856090",
   phone3: "+91 6383376718",
-  whatsappNumber: "9042594468", // Use one number for WA, if different from phone numbers
+  whatsappNumber: "9047559590", // Use one number for WA, if different from phone numbers
   whatsappMessage:
     "Hello, I saw your website footer and would like to inquire about signage solutions.",
 };
@@ -47,10 +48,10 @@ const Footer = () => {
             {/* Row 1: Logos */}
             <h3 className="text-3xl font-extrabold text-red-400 flex justify-center gap-6">
               <a href="/">
-                <img src={logo} alt="Your Logo" className="h-34 w-auto" />
+                <img src={logo} alt="Your Logo" className="h-40 w-auto" />
               </a>
               <a href="/">
-                <img src={logo} alt="Your Logo" className="h-34 w-auto" />
+                <img src={logo2} alt="Your Logo" className="h-30 w-auto" />
               </a>
             </h3>
 
@@ -75,7 +76,7 @@ const Footer = () => {
 
               {/* Instagram */}
               <a
-                href="https://www.instagram.com/yourprofile"
+                href="https://www.instagram.com/rbdesignstmm?igsh=dnoyZDVrcDZ3Y2J2"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-pink-600 rounded-full text-white shadow-xl hover:bg-pink-500 transition transform hover:scale-110"
@@ -85,7 +86,7 @@ const Footer = () => {
 
               {/* Facebook */}
               <a
-                href="https://www.facebook.com/yourprofile"
+                href="https://www.facebook.com/share/19nzVXBN7m/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-blue-600 rounded-full text-white shadow-xl hover:bg-blue-500 transition transform hover:scale-110"
