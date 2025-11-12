@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa"; // Import necessary icons
 import logo from "../../public/images/gallery/logo.png";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const NavLinks = [
   { title: "Home", url: "/" },
   { title: "About Us", url: "/about" },
@@ -19,12 +23,22 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponen
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    Aos.init({ duration: 3000, once: true });
+  }, []);
+
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Website Name */}
-          <a href="/" className="flex-shrink-0">
+          <a
+            href="/"
+            className="flex-shrink-0"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+          >
             <img src={logo} alt="Your Logo" className="h-34" />
           </a>
 

@@ -26,6 +26,9 @@ import img24 from "../../public/images/gallery/img24.jpg";
 import img25 from "../../public/images/gallery/img25.jpg";
 import img26 from "../../public/images/gallery/img26.png";
 import img27 from "../../public/images/gallery/img27.jpg";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // Sample Data organized by category (Heading)
 const GalleryCategories = [
@@ -223,17 +226,23 @@ const GalleryCategories = [
 ];
 
 const Gallery = () => {
+  useEffect(() => {
+    Aos.init({ duration: 700, once: true });
+  }, []);
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Section Title */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-extrabold text-gray-900 sm:text-6xl">
+          <h1
+            data-aos="fade-down"
+            className="text-5xl font-extrabold text-gray-900 sm:text-6xl"
+          >
             Our Portfolio of{" "}
             <span className="text-red-600">Signage Solutions</span>{" "}
             {/* Changed color back to red for consistency */}
           </h1>
-          <p className="mt-4 text-xl text-gray-600">
+          <p data-aos="fade-down" className="mt-4 text-xl text-gray-600">
             See the quality, precision, and creativity that goes into every
             project at Reach Brand.
           </p>
@@ -244,10 +253,15 @@ const Gallery = () => {
           <div key={group.category} className="mb-20">
             {/* Category Heading (as requested) */}
             <div className="mb-8 text-center md:text-left border-b-2 border-indigo-100 pb-3">
-              <h2 className="text-3xl font-bold text-gray-800">
+              <h2
+                data-aos="flip-right"
+                className="text-3xl font-bold text-gray-800"
+              >
                 {group.category}
               </h2>
-              <p className="text-lg text-gray-600 mt-2">{group.description}</p>
+              <p data-aos="flip-left" className="text-lg text-gray-600 mt-2">
+                {group.description}
+              </p>
             </div>
 
             {/* Responsive Image Grid */}
@@ -258,6 +272,7 @@ const Gallery = () => {
                   className="relative overflow-hidden rounded-lg shadow-xl group cursor-pointer"
                 >
                   <img
+                    data-aos="zoom-in"
                     src={image.url}
                     alt={image.alt}
                     width={800}

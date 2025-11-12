@@ -8,6 +8,9 @@ import client6 from "../../public/images/clients/client6.jpg";
 import client7 from "../../public/images/clients/client7.png";
 import client8 from "../../public/images/clients/client8.png";
 import client9 from "../../public/images/clients/client9.jpg";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // Define a list of sample client logos
 const ClientLogos = [
@@ -60,15 +63,21 @@ const ClientLogos = [
 ];
 
 const Clients = () => {
+  useEffect(() => {
+    Aos.init({ duration: 500, once: true });
+  }, []);
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading Updated to "Our Valued Clients" */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+          <h2
+            data-aos="fade-right"
+            className="text-4xl font-extrabold text-gray-900 sm:text-5xl"
+          >
             Our Valued <span className="text-red-600">Clients</span>
           </h2>
-          <p className="mt-4 text-xl text-gray-600">
+          <p data-aos="fade-left" className="mt-4 text-xl text-gray-600">
             We deliver exceptional signage solutions that help our clients
             elevate their brand visibility and communication.
           </p>
@@ -86,6 +95,7 @@ const Clients = () => {
                 className="p-4 bg-gray-50 rounded-lg transition duration-300 hover:shadow-lg hover:bg-gray-100"
               >
                 <img
+                  data-aos="zoom-in"
                   src={logo.url}
                   alt={logo.alt}
                   title={logo.alt}

@@ -2,6 +2,9 @@ import React from "react";
 import { FaWhatsapp } from "react-icons/fa"; // Import FaWhatsapp icon
 // Assuming the path is correct based on your previous component usage
 import teamCollaborationBg from "../../public/images/home-background.jpg";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // WhatsApp Configuration (Reused from Header Component)
 const WHATSAPP_NUMBER = "9042594468";
@@ -12,6 +15,9 @@ const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponen
 
 // --- NEW FIXED WHATSAPP BUTTON COMPONENT ---
 const FixedWhatsAppButton = () => {
+  useEffect(() => {
+    Aos.init({ duration: 500, once: true });
+  }, []);
   return (
     // Button is FIXED to the bottom right, only visible on MOBILE (md:hidden)
     <a
@@ -48,11 +54,17 @@ const Landing = () => {
       <div className="relative z-10 flex flex-col items-center justify-start pt-16 md:pt-24 min-h-screen text-white px-4">
         {/* --- Main Headline / Introduction --- */}
         <div className="max-w-5xl text-center mb-12 sm:mb-16">
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
+          <h1
+            data-aos="flip-left"
+            className="text-4xl sm:text-6xl font-extrabold tracking-tight"
+          >
             Design, Build, & Install Your{" "}
             <span className="text-red-400">Perfect Brand Identity</span>
           </h1>
-          <p className="mt-4 text-lg sm:text-xl font-medium text-gray-300">
+          <p
+            data-aos="flip-right"
+            className="mt-4 text-lg sm:text-xl font-medium text-gray-300"
+          >
             Specializing in high-impact Banners, Arch Boards, and bespoke
             signage design solutions.
           </p>
@@ -61,7 +73,10 @@ const Landing = () => {
         {/* --- Mission & Vision Cards (Side-by-Side on Desktop) --- */}
         <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-2 pb-16">
           {/* Mission Card: Solid Contrast for Readability */}
-          <section className="p-8 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-indigo-500 transform hover:scale-[1.02] transition duration-300 ease-in-out">
+          <section
+            data-aos="fade-up-right"
+            className="p-8 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-indigo-500 transform hover:scale-[1.02] transition duration-300 ease-in-out"
+          >
             <h2 className="text-3xl font-bold mb-4 text-red-400 flex items-center justify-center lg:justify-start">
               <svg
                 className="w-8 h-8 mr-3 text-red-500"
@@ -92,7 +107,10 @@ const Landing = () => {
           </section>
 
           {/* Vision Card: Solid Contrast for Readability */}
-          <section className="p-8 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-emerald-500 transform hover:scale-[1.02] transition duration-300 ease-in-out">
+          <section
+            data-aos="fade-up-left"
+            className="p-8 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-emerald-500 transform hover:scale-[1.02] transition duration-300 ease-in-out"
+          >
             <h2 className="text-3xl font-bold mb-4 text-red-400 flex items-center justify-center lg:justify-start">
               <svg
                 className="w-8 h-8 mr-3 text-red-500"

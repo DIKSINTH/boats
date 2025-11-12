@@ -5,7 +5,9 @@ import {
   FaPhoneAlt,
   FaWhatsapp,
 } from "react-icons/fa";
-
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 // Contact Details
 const CONTACT_INFO = {
   websiteName: "Reach Brand",
@@ -25,22 +27,34 @@ const WHATSAPP_LINK = `https://wa.me/${
 )}`;
 
 const ContactInfo = () => {
+  useEffect(() => {
+    Aos.init({ duration: 500, once: true });
+  }, []);
   return (
     <section className="py-16 md:py-24 bg-gray-50">
       {/* CONTENT CONTAINER */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-extrabold text-gray-900 sm:text-6xl text-red-600">
+          <h1
+            data-aos="zoom-in"
+            className="text-5xl font-extrabold text-gray-900 sm:text-6xl text-red-600"
+          >
             {CONTACT_INFO.websiteName}
           </h1>
-          <p className="mt-2 text-2xl font-semibold text-gray-600">
+          <p
+            data-aos="zoom-out"
+            className="mt-2 text-2xl font-semibold text-gray-600"
+          >
             Get In Touch With Our Team
           </p>
         </div>
 
         {/* Contact Panel */}
-        <div className="bg-white p-8 md:p-12 rounded-xl shadow-2xl border-t-4 border-red-500">
+        <div
+          className="bg-white p-8 md:p-12 rounded-xl shadow-2xl border-t-4 border-red-500"
+          data-aos="flip-right"
+        >
           <div className="space-y-8 text-center md:text-left">
             {/* Address */}
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-2 md:space-y-0 md:space-x-4">
@@ -113,7 +127,7 @@ const ContactInfo = () => {
 
       {/* 🌍 FULL WIDTH MAP (OUTSIDE CONTAINER) */}
       <div className="w-full mt-16">
-        <div className="w-full h-[450px]">
+        <div className="w-full h-[450px]" data-aos="fade-up">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.287738779854!2d77.98084709999999!3d9.826183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00d3e83cedcc03%3A0xe59469b5fbcd481c!2sRB%20Designs%20%26%20Fabrications!5e0!3m2!1sen!2sin!4v1762435067618!5m2!1sen!2sin"
             width="100%"

@@ -1,5 +1,8 @@
 import React from "react";
 import { FaFlag, FaBuilding, FaRegLightbulb, FaTools } from "react-icons/fa";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 // Define the array of services offered by Reach Brand
 const ServiceItems = [
@@ -54,15 +57,21 @@ const ServiceItems = [
 ];
 
 const Services = () => {
+  useEffect(() => {
+    Aos.init({ duration: 500, once: true });
+  }, []);
   return (
     <section className="py-16 md:py-24 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+          <h2
+            data-aos="fade-left"
+            className="text-4xl font-extrabold text-gray-900 sm:text-5xl"
+          >
             Our <span className="text-red-600">Specialized Services</span>
           </h2>
-          <p className="mt-4 text-xl text-gray-600">
+          <p data-aos="fade-left" className="mt-4 text-xl text-gray-600">
             From initial design concepts to final installation—we handle all
             your brand visibility needs.
           </p>
@@ -72,6 +81,7 @@ const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {ServiceItems.map((service) => (
             <div
+              data-aos="zoom-in"
               key={service.id}
               className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-transparent hover:border-red-500 transition duration-300 transform hover:scale-[1.02]"
             >
@@ -88,11 +98,15 @@ const Services = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-12 md:mt-16">
-          <p className="text-xl font-medium text-gray-700 mb-6">
+          <p
+            data-aos="zoom-out"
+            className="text-xl font-medium text-gray-700 mb-6"
+          >
             Ready to start a project? Get a detailed quote for your specific
             needs.
           </p>
           <a
+            data-aos="zoom-in"
             href="/contact"
             className="inline-block bg-red-600 text-white font-extrabold py-3 px-8 rounded-lg text-lg shadow-xl hover:bg-red-700 transition duration-300 transform hover:scale-105"
           >
