@@ -1,10 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaFlag, FaBuilding, FaRegLightbulb, FaTools } from "react-icons/fa";
-import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-// Define the array of services offered by Reach Brand
 const ServiceItems = [
   {
     id: 1,
@@ -48,7 +46,7 @@ const ServiceItems = [
   },
   {
     id: 6,
-    icon: FaBuilding, // Reusing icon, or find a new one like FaMapMarkedAlt
+    icon: FaBuilding,
     title: "Installation & Maintenance",
     description:
       "Professional, safe installation services for all signage types, plus long-term maintenance plans to keep your displays looking perfect.",
@@ -58,27 +56,31 @@ const ServiceItems = [
 
 const Services = () => {
   useEffect(() => {
-    Aos.init({ duration: 500, once: true });
+    Aos.init({ duration: 600, once: true });
   }, []);
+
   return (
-    <section className="py-16 md:py-24 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-gray-100 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         {/* Section Heading */}
         <div className="text-center mb-12">
           <h2
-            data-aos="fade-left"
-            className="text-4xl font-extrabold text-gray-900 sm:text-5xl"
+            data-aos="fade-up"
+            className="text-4xl font-extrabold text-gray-900 sm:text-5xl break-words"
           >
             Our <span className="text-red-600">Specialized Services</span>
           </h2>
-          <p data-aos="fade-left" className="mt-4 text-xl text-gray-600">
-            From initial design concepts to final installation—we handle all
+          <p
+            data-aos="fade-up"
+            className="mt-4 text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto"
+          >
+            From initial design concepts to final installation — we handle all
             your brand visibility needs.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 overflow-hidden">
           {ServiceItems.map((service) => (
             <div
               data-aos="zoom-in"
@@ -86,21 +88,19 @@ const Services = () => {
               className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-transparent hover:border-red-500 transition duration-300 transform hover:scale-[1.02]"
             >
               <service.icon className={`w-10 h-10 mb-4 ${service.color}`} />
-
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-xl font-bold text-gray-900 mb-3 break-words">
                 {service.title}
               </h3>
-
               <p className="text-gray-600">{service.description}</p>
             </div>
           ))}
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-12 md:mt-16">
+        <div className="text-center mt-12 md:mt-16 overflow-hidden">
           <p
-            data-aos="zoom-out"
-            className="text-xl font-medium text-gray-700 mb-6"
+            data-aos="fade-up"
+            className="text-lg sm:text-xl font-medium text-gray-700 mb-6"
           >
             Ready to start a project? Get a detailed quote for your specific
             needs.

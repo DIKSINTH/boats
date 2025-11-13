@@ -1,38 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaTrophy, FaUsers, FaLightbulb } from "react-icons/fa";
 import img from "../../public/images/home-background.jpg";
-import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-// Placeholder image (replace with a real image of your team, facility, or best work)
-// For demonstration, we'll assume a generic image is imported or fetched.
-// In a real project, you might import it like:
-// import companyTeamImage from './assets/your-team.jpg';
 
 const AboutUs = () => {
   useEffect(() => {
     Aos.init({ duration: 500, once: true });
   }, []);
+
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 md:py-24 bg-white overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         {/* Section Heading */}
         <div className="text-center mb-12">
           <h2
             data-aos="fade-down"
-            className="text-4xl font-extrabold text-gray-900 sm:text-5xl"
+            className="text-4xl font-extrabold text-gray-900 sm:text-5xl break-words"
           >
             Who We Are: The <span className="text-red-600">Reach Brand</span>{" "}
             Story
           </h2>
-          <p data-aos="fade-down" className="mt-4 text-xl text-gray-600">
-            More than just signs—we deliver lasting brand impressions.
+          <p
+            data-aos="fade-down"
+            className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto"
+          >
+            More than just signs — we deliver lasting brand impressions.
           </p>
         </div>
 
-        {/* Content Grid (Text & Image) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Narrative Text */}
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center overflow-hidden">
+          {/* Text Section */}
           <div className="lg:order-1 order-2">
             <h3
               data-aos="fade-right"
@@ -44,11 +43,11 @@ const AboutUs = () => {
               data-aos="fade-right"
               className="mt-4 text-lg text-gray-700 leading-relaxed"
             >
-              Founded in Madurai, **Reach Brand** has grown into a leading name
-              in high-quality signage solutions, specializing in impactful
-              **Banners, Arch Boards, and bespoke architectural designs**. We
-              believe that effective communication starts with exceptional
-              visibility.
+              Founded in Madurai, <strong>Reach Brand</strong> has grown into a
+              leading name in high-quality signage solutions, specializing in
+              impactful <strong>Banners, Arch Boards,</strong> and bespoke
+              architectural designs. We believe that effective communication
+              starts with exceptional visibility.
             </p>
             <p
               data-aos="fade-right"
@@ -56,20 +55,15 @@ const AboutUs = () => {
             >
               Our commitment goes beyond just manufacturing. Our in-house team
               of designers and fabricators work collaboratively to ensure every
-              project—from small retail signs to massive event arch boards—is
-              executed with **precision, durability, and creative flair**. We
-              are driven by a passion for helping local and national businesses
-              achieve their full brand potential.
+              project — from small retail signs to massive event arch boards —
+              is executed with <strong>precision, durability,</strong> and{" "}
+              <strong>creative flair</strong>. We are driven by a passion for
+              helping local and national businesses achieve their full brand
+              potential.
             </p>
-            {/* <a
-              href="/services"
-              className="mt-8 inline-block bg-red-600 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:bg-indigo-700 transition duration-300"
-            >
-              See Our Full Capabilities
-            </a> */}
           </div>
 
-          {/* Image Placeholder */}
+          {/* Image Section */}
           <div
             data-aos="fade-left"
             className="lg:order-2 order-1 shadow-2xl rounded-xl overflow-hidden transform hover:shadow-indigo-400/50 transition duration-500"
@@ -82,10 +76,10 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Key Stats/Metrics Section */}
+        {/* Stats Section */}
         <div
           data-aos="fade-up"
-          className="mt-16 pt-12 border-t border-gray-200"
+          className="mt-16 pt-12 border-t border-gray-200 overflow-hidden"
         >
           <dl className="grid grid-cols-1 gap-10 sm:grid-cols-3 text-center">
             <div className="flex flex-col items-center">

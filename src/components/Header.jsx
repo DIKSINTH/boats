@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa"; // Import necessary icons
+import React, { useState, useEffect } from "react";
+import { FaWhatsapp, FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../public/images/gallery/logo.png";
-import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -13,7 +12,7 @@ const NavLinks = [
   { title: "Contact Us", url: "/contact" },
 ];
 
-// Replace 'XXXXXXXXXX' with your full WhatsApp number including country code (no +, no 00).
+// Replace with your full WhatsApp number (no + or 00)
 const WHATSAPP_NUMBER = "9047559590";
 const WHATSAPP_MESSAGE = "Hello! I am interested in your services.";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
@@ -28,10 +27,10 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="bg-white shadow-md sticky top-0 z-50 w-full overflow-x-hidden">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 overflow-x-hidden">
         <div className="flex justify-between items-center h-16">
-          {/* Logo/Website Name */}
+          {/* Logo */}
           <a
             href="/"
             className="flex-shrink-0"
@@ -39,10 +38,14 @@ const Header = () => {
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
           >
-            <img src={logo} alt="Your Logo" className="h-34" />
+            <img
+              src={logo}
+              alt="Your Logo"
+              className="h-10 w-auto max-w-full"
+            />
           </a>
 
-          {/* Desktop Navigation & WhatsApp Icon */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {NavLinks.map((link) => (
               <a
@@ -54,7 +57,7 @@ const Header = () => {
               </a>
             ))}
 
-            {/* WhatsApp Enquiry Button (Visible on Desktop only) */}
+            {/* WhatsApp Enquiry Button (Desktop only) */}
             <a
               href={WHATSAPP_LINK}
               target="_blank"
@@ -66,43 +69,54 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* Mobile Menu Button (ONLY toggle button remains) */}
+          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            {/* *** Removed WhatsApp Button from Mobile View ***
-            The mobile WhatsApp icon has been removed from this section, 
-            leaving only the menu toggle button.
-            */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
               aria-expanded={isOpen}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">Toggle main menu</span>
               {isOpen ? (
-                <FaTimes className="block h-6 w-6" />
+                <FaTimes className="h-6 w-6" />
               ) : (
-                <FaBars className="block h-6 w-6" />
+                <FaBars className="h-6 w-6" />
               )}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu (Collapsible) */}
-      <div className={`${isOpen ? "block" : "hidden"} md:hidden`}>
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {/* Mobile Menu */}
+      <div
+        className={`${
+          isOpen ? "block" : "hidden"
+        } md:hidden w-full bg-white border-t border-gray-200`}
+      >
+        <div className="px-4 py-3 space-y-2">
           {NavLinks.map((link) => (
             <a
               key={link.title}
               href={link.url}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600"
-              onClick={() => setIsOpen(false)} // Close menu on link click
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-red-50 hover:text-red-600 transition"
+              onClick={() => setIsOpen(false)}
             >
               {link.title}
             </a>
           ))}
         </div>
       </div>
+
+      {/* Floating WhatsApp Button (visible on all screens) */}
+      <a
+        href={WHATSAPP_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition z-50"
+        aria-label="WhatsApp Chat"
+      >
+        <FaWhatsapp className="w-6 h-6" />
+      </a>
     </header>
   );
 };

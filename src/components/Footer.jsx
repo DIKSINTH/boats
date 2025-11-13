@@ -10,7 +10,6 @@ import {
 import logo from "../../public/images/gallery/logo.png";
 import logo2 from "../../public/images/gallery/logo2.png";
 
-// Define the navigation links (same as used in the Header)
 const NavLinks = [
   { title: "Home", url: "/" },
   { title: "About Us", url: "/about" },
@@ -19,15 +18,14 @@ const NavLinks = [
   { title: "Contact Us", url: "/contact" },
 ];
 
-// Contact Details
 const CONTACT_INFO = {
   address:
-    "R.R.Complex, 252, Munshif Court Road, Banu Theatre Near, Thirumangalam, Madurai - 625 706",
+    "R.R.Complex, 252, Munshif Court Road, Banu Theatre Near, Thirumangalam, Madurai - 625 706",
   email: "reachbrandmdu@gmail.com",
   phone1: "+91 9047559590",
   phone2: "+91 9791856090",
   phone3: "+91 6383376718",
-  whatsappNumber: "9047559590", // Use one number for WA, if different from phone numbers
+  whatsappNumber: "9047559590",
   whatsappMessage:
     "Hello, I saw your website footer and would like to inquire about signage solutions.",
 };
@@ -37,67 +35,73 @@ const WHATSAPP_LINK = `https://wa.me/${
 }?text=${encodeURIComponent(CONTACT_INFO.whatsappMessage)}`;
 
 const Footer = () => {
-  const websiteName = "Reach Brand"; // Use your actual website name
+  const websiteName = "Reach Brand";
 
   return (
-    <footer className="bg-gray-900 text-white border-t border-red-500 mt-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+    <footer className="bg-gray-900 text-white border-t border-red-500 mt-12 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16 overflow-x-hidden">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
-          {/* 1. Logo & Website Name */}
-          <div className="md:col-span-1 space-y-4 text-center">
-            {/* Row 1: Logos */}
-            <h3 className="text-3xl font-extrabold text-red-400 flex justify-center gap-6">
-              <a href="/">
-                <img src={logo} alt="Your Logo" className="h-40 w-auto" />
+          {/* 1. Logo & Social */}
+          <div className="md:col-span-1 text-center space-y-4">
+            {/* Logos */}
+            <div className="flex flex-wrap justify-center items-center gap-4">
+              <a href="/" className="block">
+                <img
+                  src={logo}
+                  alt="Reach Brand Logo"
+                  className="h-24 w-auto mx-auto"
+                  loading="lazy"
+                />
               </a>
-              <a href="/">
-                <img src={logo2} alt="Your Logo" className="h-30 w-auto" />
+              <a href="/" className="block">
+                <img
+                  src={logo2}
+                  alt="Reach Brand Secondary Logo"
+                  className="h-20 w-auto mx-auto"
+                  loading="lazy"
+                />
               </a>
-            </h3>
+            </div>
 
-            {/* Row 2: Paragraph */}
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-400 px-2">
               Transforming communication through high-quality, custom signage
               design and fabrication.
             </p>
 
-            {/* Row 3: WhatsApp + Instagram + Facebook */}
-            <div className="flex justify-center gap-4 pt-4">
-              {/* WhatsApp */}
+            {/* Social Links */}
+            <div className="flex justify-center gap-4 pt-4 overflow-hidden">
               <a
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-green-600 rounded-full text-white shadow-xl hover:bg-green-500 transition transform hover:scale-110"
-                aria-label="WhatsApp Enquiry"
+                className="p-3 bg-green-600 rounded-full text-white shadow-lg hover:bg-green-500 transition transform hover:scale-105"
+                aria-label="WhatsApp"
               >
                 <FaWhatsapp className="w-6 h-6" />
               </a>
-
-              {/* Instagram */}
               <a
                 href="https://www.instagram.com/rbdesignstmm?igsh=dnoyZDVrcDZ3Y2J2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-pink-600 rounded-full text-white shadow-xl hover:bg-pink-500 transition transform hover:scale-110"
+                className="p-3 bg-pink-600 rounded-full text-white shadow-lg hover:bg-pink-500 transition transform hover:scale-105"
+                aria-label="Instagram"
               >
                 <FaInstagram className="w-6 h-6" />
               </a>
-
-              {/* Facebook */}
               <a
                 href="https://www.facebook.com/share/19nzVXBN7m/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-blue-600 rounded-full text-white shadow-xl hover:bg-blue-500 transition transform hover:scale-110"
+                className="p-3 bg-blue-600 rounded-full text-white shadow-lg hover:bg-blue-500 transition transform hover:scale-105"
+                aria-label="Facebook"
               >
                 <FaFacebook className="w-6 h-6" />
               </a>
             </div>
           </div>
 
-          {/* 2. Quick Navigation Links */}
-          <div className="md:col-span-1">
+          {/* 2. Quick Links */}
+          <div>
             <h4 className="text-lg font-semibold mb-4 text-red-300 border-b border-gray-700 pb-2">
               Quick Links
             </h4>
@@ -106,7 +110,7 @@ const Footer = () => {
                 <li key={link.title}>
                   <a
                     href={link.url}
-                    className="text-gray-300 hover:text-red-400 transition duration-150 text-base"
+                    className="text-gray-300 hover:text-red-400 transition text-base"
                   >
                     {link.title}
                   </a>
@@ -115,22 +119,20 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* 3. Contact Information */}
+          {/* 3. Contact Info */}
           <div className="md:col-span-2 space-y-4">
             <h4 className="text-lg font-semibold mb-4 text-red-300 border-b border-gray-700 pb-2">
               Get in Touch
             </h4>
 
-            {/* Address */}
             <div className="flex items-start space-x-3">
               <FaMapMarkerAlt className="w-5 h-5 mt-1 text-red-400 flex-shrink-0" />
-              <p className="text-gray-300">
+              <p className="text-gray-300 leading-relaxed">
                 <span className="font-medium">Address:</span>{" "}
                 {CONTACT_INFO.address}
               </p>
             </div>
 
-            {/* Email */}
             <div className="flex items-center space-x-3">
               <FaEnvelope className="w-5 h-5 text-red-400 flex-shrink-0" />
               <a
@@ -141,42 +143,28 @@ const Footer = () => {
               </a>
             </div>
 
-            {/* Phone Numbers */}
-            <div className="flex flex-col space-y-2 pt-1">
-              <div className="flex items-center space-x-3">
-                <FaPhoneAlt className="w-5 h-5 text-red-400 flex-shrink-0" />
-                <a
-                  href={`tel:${CONTACT_INFO.phone1}`}
-                  className="text-gray-300 hover:text-red-400 transition"
-                >
-                  {CONTACT_INFO.phone1}
-                </a>
-              </div>
-              <div className="flex items-center space-x-3 ml-8 sm:ml-0">
-                {" "}
-                {/* Align second number */}
-                <a
-                  href={`tel:${CONTACT_INFO.phone2}`}
-                  className="text-gray-300 hover:text-red-400 transition md:ml-8"
-                >
-                  {CONTACT_INFO.phone2}
-                </a>
-              </div>
-              <div className="flex items-center space-x-3 ml-8 sm:ml-0">
-                {" "}
-                {/* Align third number */}
-                <a
-                  href={`tel:${CONTACT_INFO.phone3}`}
-                  className="text-gray-300 hover:text-red-400 transition md:ml-8"
-                >
-                  {CONTACT_INFO.phone3}
-                </a>
-              </div>
+            {/* Phones */}
+            <div className="flex flex-col gap-2 pt-1">
+              {[
+                CONTACT_INFO.phone1,
+                CONTACT_INFO.phone2,
+                CONTACT_INFO.phone3,
+              ].map((phone, i) => (
+                <div key={i} className="flex items-center space-x-3">
+                  <FaPhoneAlt className="w-5 h-5 text-red-400 flex-shrink-0" />
+                  <a
+                    href={`tel:${phone}`}
+                    className="text-gray-300 hover:text-red-400 transition"
+                  >
+                    {phone}
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Copyright and Bottom Line */}
+        {/* Bottom Line */}
         <div className="mt-10 pt-6 border-t border-gray-700 text-center">
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} {websiteName}. All rights

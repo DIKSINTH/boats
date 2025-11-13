@@ -1,62 +1,55 @@
-import React from "react";
-import { FaWhatsapp } from "react-icons/fa"; // Import FaWhatsapp icon
-// Assuming the path is correct based on your previous component usage
+import React, { useEffect } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import teamCollaborationBg from "../../public/images/home-background.jpg";
-import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-// WhatsApp Configuration (Reused from Header Component)
+// WhatsApp config
 const WHATSAPP_NUMBER = "9042594468";
 const WHATSAPP_MESSAGE = "Hello! I am interested in your services.";
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   WHATSAPP_MESSAGE
 )}`;
 
-// --- NEW FIXED WHATSAPP BUTTON COMPONENT ---
 const FixedWhatsAppButton = () => {
   useEffect(() => {
     Aos.init({ duration: 500, once: true });
   }, []);
   return (
-    // Button is FIXED to the bottom right, only visible on MOBILE (md:hidden)
     <a
       href={WHATSAPP_LINK}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 z-50 md:hidden 
-                       p-4 bg-green-500 rounded-full text-white shadow-xl 
-                       hover:bg-green-600 transition duration-300 ease-in-out 
-                       transform hover:scale-110"
+                 p-4 bg-green-500 rounded-full text-white shadow-xl 
+                 hover:bg-green-600 transition duration-300 ease-in-out 
+                 transform hover:scale-110"
       aria-label="WhatsApp Chat"
     >
       <FaWhatsapp className="w-8 h-8" />
     </a>
   );
 };
-// ----------------------------------------------
 
 const Landing = () => {
   return (
-    // Outer container: Full viewport height and width
-    <div className="relative min-h-screen w-full bg-gray-900 overflow-hidden">
-      {/* 1. Background Image Container (Full Screen) */}
+    <div className="relative min-h-screen w-full bg-gray-900 overflow-x-hidden overflow-y-auto">
+      {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${teamCollaborationBg})` }}
         aria-hidden="true"
       >
-        {/* Darker Overlay for Text Readability - Increased to 80% */}
         <div className="absolute inset-0 bg-black opacity-40"></div>
       </div>
 
-      {/* 2. Content Container (Centered and Z-Index) */}
-      <div className="relative z-10 flex flex-col items-center justify-start pt-16 md:pt-24 min-h-screen text-white px-4">
-        {/* --- Main Headline / Introduction --- */}
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-start pt-16 md:pt-24 min-h-screen text-white px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+        {/* Heading */}
         <div className="max-w-5xl text-center mb-12 sm:mb-16">
           <h1
             data-aos="flip-left"
-            className="text-4xl sm:text-6xl font-extrabold tracking-tight"
+            className="text-4xl sm:text-6xl font-extrabold tracking-tight break-words"
           >
             Design, Build, & Install Your{" "}
             <span className="text-red-400">Perfect Brand Identity</span>
@@ -70,12 +63,12 @@ const Landing = () => {
           </p>
         </div>
 
-        {/* --- Mission & Vision Cards (Side-by-Side on Desktop) --- */}
-        <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 px-2 pb-16">
-          {/* Mission Card: Solid Contrast for Readability */}
+        {/* Mission / Vision */}
+        <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 px-2 sm:px-4 lg:px-6 pb-16 overflow-hidden">
+          {/* Mission */}
           <section
             data-aos="fade-up-right"
-            className="p-8 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-indigo-500 transform hover:scale-[1.02] transition duration-300 ease-in-out"
+            className="p-6 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-indigo-500 transform hover:scale-[1.02] transition duration-300 ease-in-out"
           >
             <h2 className="text-3xl font-bold mb-4 text-red-400 flex items-center justify-center lg:justify-start">
               <svg
@@ -98,18 +91,17 @@ const Landing = () => {
               <span className="font-semibold text-indigo-100">
                 At Reach Brand,
               </span>{" "}
-              our mission is to **transform the way people and businesses
-              communicate** by designing and creating **high-quality,
-              custom-built banners, arch boards, and permanent signage**. We
-              ensure your unique message is impactful and stands out from the
-              competition.
+              our mission is to transform the way people and businesses
+              communicate by designing and creating high-quality, custom-built
+              banners, arch boards, and permanent signage. We ensure your unique
+              message is impactful and stands out from the competition.
             </p>
           </section>
 
-          {/* Vision Card: Solid Contrast for Readability */}
+          {/* Vision */}
           <section
             data-aos="fade-up-left"
-            className="p-8 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-emerald-500 transform hover:scale-[1.02] transition duration-300 ease-in-out"
+            className="p-6 sm:p-10 bg-gray-900 bg-opacity-85 rounded-xl shadow-2xl border-l-4 border-emerald-500 transform hover:scale-[1.02] transition duration-300 ease-in-out"
           >
             <h2 className="text-3xl font-bold mb-4 text-red-400 flex items-center justify-center lg:justify-start">
               <svg
@@ -123,24 +115,24 @@ const Landing = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
-                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.003 2.003m-2.003-2.003a20.001 20.001 0 00-3.9-1.288m-2.004 2.004l2.003 2.003m-2.003-2.003c.174.453.385.914.629 1.365l-4.184 4.184M18.823 16.324l-4.184 4.184c.452.245.913.456 1.365.631M16.48 20.941c.484.095.979.14 1.48.14m-5.464-9.986l-2.004-2.004m2.004 2.004a18.991 18.991 0 01-2.483-2.919m2.483 2.919a18.991 18.991 0 00.14-.523M11 11.5l2-2m-2 2a.5.5 0 110-1 .5.5 0 010 1zm2 2l2-2m-2 2a.5.5 0 110-1 .5.5 0 010 1zm-1-8.5l.01-.01M7 11h.01"
+                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.003 2.003m-2.003-2.003a20.001 20.001 0 00-3.9-1.288m-2.004 2.004l2.003 2.003m-2.003-2.003c.174.453.385.914.629 1.365l-4.184 4.184M18.823 16.324l-4.184 4.184c.452.245.913.456 1.365.631M16.48 20.941c.484.095.979.14 1.48.14m-5.464-9.986l-2.004-2.004m2.004 2.004a18.991 18.991 0 01-2.483-2.919m2.483 2.919a18.991 18.991 0 00-.14-.523M11 11.5l2-2m-2 2a.5.5 0 110-1 .5.5 0 010 1zm2 2l2-2m-2 2a.5.5 0 110-1 .5.5 0 010 1zm-1-8.5l.01-.01M7 11h.01"
                 ></path>
               </svg>
               Our Vision
             </h2>
             <p className="text-lg leading-relaxed font-light text-white">
-              Our vision is to be the **leading design and fabrication partner**
-              for businesses seeking superior **brand visibility** through
-              banners, arch boards, and innovative custom signage. We commit to
-              continuous **excellence and customer success** in every project.
+              Our vision is to be the leading design and fabrication partner for
+              businesses seeking superior brand visibility through banners, arch
+              boards, and innovative custom signage. We commit to continuous
+              excellence and customer success in every project.
             </p>
           </section>
         </div>
 
-        {/* --- Call to Action (Centered at the bottom) --- */}
+        {/* CTA */}
         <div className="mt-8 mb-16">
           <a
-            href="/contact" // Link to your contact page
+            href="/contact"
             className="inline-block bg-red-600 hover:bg-red-700 text-white font-extrabold py-4 px-10 rounded-full text-xl shadow-2xl transform hover:scale-110 transition duration-300 ease-in-out"
           >
             Get a Free Design Consultation
@@ -148,7 +140,7 @@ const Landing = () => {
         </div>
       </div>
 
-      {/* 3. Fixed Mobile WhatsApp Button - Renders globally within this component's scope */}
+      {/* Floating WhatsApp Button */}
       <FixedWhatsAppButton />
     </div>
   );
