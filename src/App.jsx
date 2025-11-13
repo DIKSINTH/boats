@@ -5,11 +5,13 @@ import About from "./pages/Aboutus";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contactus";
+import LoadingIndicator from "./components/LoadingIndicater.jsx";
 
 function App() {
   return (
     <>
       <Router>
+        <LoadingIndicator />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
